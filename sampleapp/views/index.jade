@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+
+    button(name="Register")
+        |Register
+
+    table
+        thead
+            tr
+                th
+                    |Name
+                th
+                    |Age
+                th
+                    |Gender
+                th
+                    |Register for Newsletter
+                th
+                    |Interests
+        tbody
+            - var users = RegisteredUsers;
+            each user in users
+                tr
+                    td #{user.user_name}
+                    td #{user.date_of_birth}
+                    td #{user.gender}
+                    td #{user.register_for_newsletter}
+                    td #{user.interests}
